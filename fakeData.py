@@ -5,17 +5,21 @@ import pandas as pd
 
 # Create a Faker instance
 fake = Faker()
+# print(fake.uuid4())
+# print(fake.date_time())
 # print(fake.first_name())
 # print(fake.last_name())
-# print(fake.email())
 # print(fake.phone_number())
-# print(fake.address())
+# print(fake.company_email())
 # print(fake.job())
 # print(fake.company())
 # print(fake.country())
-# print(fake.text())
+# print(fake.timezone())
+# print(fake.currency_code())
+
+
 # Set the headers
-fields = ['First Name', 'Last Name', 'Email', 'Phone Number', 'Address', 'Country', 'Job', 'Company Location', 'Bio']
+fields = ['User Key', 'First Contract', 'First Name', 'Last Name', 'Phone Number', 'Company Email', 'Job', 'Company', 'Companies Location', 'Timezone', 'Type of Currency']
 # # # Create a csv file
 fileName = 'cust.csv'
 
@@ -27,15 +31,17 @@ with open(fileName, 'w') as csvFile:
     #  While is number of rows you want in you csv file.
     while x <= 100000:
         csvwriter.writerows([[
+            fake.uuid4(),
+            fake.date_time(),
             fake.first_name(),
             fake.last_name(),
-            fake.email(),
             fake.phone_number(),
-            fake.address(),
-            fake.country(),
+            fake.company_email(),
             fake.job(),
             fake.company(),
-            fake.text()
+            fake.country(),
+            fake.timezone(),
+            fake.currency_code()
         ]])
         x += 1
 
