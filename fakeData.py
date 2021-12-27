@@ -6,7 +6,7 @@ import pandas as pd
 # Create a Faker instance
 fake = Faker()
 # print(fake.uuid4())
-# print(fake.date_time())
+# print(fake.date())
 # print(fake.first_name())
 # print(fake.last_name())
 # print(fake.phone_number())
@@ -19,7 +19,7 @@ fake = Faker()
 
 
 # Set the headers
-fields = ['User Key', 'First Contract', 'First Name', 'Last Name', 'Phone Number', 'Company Email', 'Job', 'Company', 'Companies Location', 'Timezone', 'Type of Currency']
+fields = ['User Key', 'Hire on Date', 'First Name', 'Last Name', 'Phone Number', 'Company Email', 'Job', 'Company', 'Companies Location', 'Timezone', 'Type of Currency']
 # # # Create a csv file
 fileName = 'cust.csv'
 
@@ -32,7 +32,7 @@ with open(fileName, 'w') as csvFile:
     while x <= 100000:
         csvwriter.writerows([[
             fake.uuid4(),
-            fake.date_time(),
+            fake.date(),
             fake.first_name(),
             fake.last_name(),
             fake.phone_number(),
